@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+  
+  <div class="header">
+    <h1>Modern To-Do List</h1>
+    <p>Organize your tasks efficiently</p>
+  </div>
+
+  <div class="container">
+    <div class="form-container">
+      <div class="task-title">
+        <h3>Task title</h3>
+        <input class="title" type="text" placeholder="Title">
+      </div>
+      <div class="task-description">
+        <h3>Task description</h3>
+        <textarea class="description" placeholder="Description"></textarea>
+      </div>
+      <div class="task-details">
+        <div class="task-due-date">
+          <h3>Task due date</h3>
+          <input class="due-date" type="date">
+        </div>
+        <div class="task-priority">
+          <h3>Task priority</h3>
+          <select class="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      <button class="add-btn">Add Task</button>
+    </div>
+     
+    <div class="task-grid">
+    <!-- Tasks will be dynamically added here -->
+
+  </div>
+
+  <button class="task-add-btn" onclick="toggleAddTaskForm()">+</button>
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
