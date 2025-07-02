@@ -6,7 +6,7 @@
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: #ffffff;
+    background: #e7e9f3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,19 +19,15 @@
     max-width: 95%;
     width: 100%;
     position: relative;
-  }
-  
-  .header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
   }
   
   .form-container {
-    background: #FAF2D3;
+    background: #ffffff;
     padding: 1.5rem;
     border-radius: 12px;
-    width: 24vw;
+    width: 350px;
     height: 65vh;
     display: flex;
     flex-direction: column;
@@ -64,7 +60,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
     margin-bottom: 1rem;
-    background: #FAF2D3;
+    background: #ffffff;
     color: #333;
   }
   .form-container textarea {
@@ -79,7 +75,7 @@
     scrollbar-width: none;
     -ms-text-overflow-style: none;
     overflow-y: scroll;
-    background: #FAF2D3;
+    background: hsl(0, 0%, 100%);
   }
   
   .form-container select {
@@ -89,7 +85,7 @@
     border-radius: 8px;
     font-size: 1rem;
     margin-bottom: 1rem;
-    background: #FAF2D3;
+    background: #ffffff;
     color: #333;
   }
   
@@ -113,7 +109,7 @@
   }
   
   .form-container button {
-    background: #09bdea;
+    background: #0061FE;
     color: white;
     cursor: pointer;
   }
@@ -121,8 +117,9 @@
   .task-grid {
     width: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 50%;
+    top: 50%;
+    transform: translate( 50%);
     padding-left: 1rem;
     column-count: 3;
     column-gap: 1rem;
@@ -139,7 +136,11 @@
     border-radius: 12px;
     padding: 1rem;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .task-card:hover {
+    box-shadow: 0 8px 24px rgba(93,26,255,0.10);
   }
   
   .card-header {
@@ -185,6 +186,7 @@
     border-radius: 8px;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
+    box-shadow: 0 10px 24px rgba(93,26,255,0.10);
   }
   .del {
     background: #ffffff;
@@ -198,6 +200,12 @@
     border-radius: 8px;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
+    box-shadow: 0 10px 24px rgba(86, 16, 249, 0.1);
+  }
+
+  .edit:hover,
+  .del:hover {
+    box-shadow: 0 0px 50px #0061FE;
   }
   
   .card-footer {
@@ -215,7 +223,7 @@
   
   .card-footer span,
   .card-footer button {
-    background: #888;
+    background: #0061FE;
     border: none;
     border-radius: 12px;
     padding: 0.4rem 0.8rem;
@@ -226,9 +234,8 @@
   }
   
   .card-footer button {
-    background: #038a30;
+    background: #0061FE;
   }
-  
   
   .task-title {
     font-size: 1.2rem;
@@ -251,7 +258,7 @@
     position: fixed;
     bottom: 3rem;
     right: 3rem;
-    background: #09bdea;
+    background: #0061FE;
     color: white;
     font-size: x-large;
     border: none;
@@ -264,14 +271,120 @@
     cursor: pointer;
   }
 
+  /*  Header */
+  .todo-header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 2.5rem;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 16px rgba(0, 97, 254, 0.07);
+    max-width: 700px;
+    margin: 2.5rem auto 2rem auto;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    transition: box-shadow 0.2s;
+  }
+
+  .todo-header-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 97, 254, 0.13);
+  }
+
+  .todo-header-app {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .todo-app-icon {
+    background: #0061FE;
+    color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(0,97,254,0.10);
+  }
+
+  .todo-app-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    letter-spacing: 0.5px;
+  }
+
+  .todo-header-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .todo-date-label {
+    font-size: 0.95rem;
+    color: #888;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  .todo-date-label i {
+    color: #0061FE;
+    font-size: 1.1rem;
+  }
+
+  .todo-date-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    letter-spacing: 0.5px;
+  }
+
+  .todo-header-toggle {
+    background: #0061FE;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,97,254,0.10);
+    transition: background 0.2s;
+  }
+
+  .todo-header-toggle:hover {
+    background: #004bbd;
+  }
+
+  .toggle-icon {
+    font-size: 2rem;
+    line-height: 1;
+    transition: transform 0.2s;
+  }
+
+
+
   @media screen and (max-width: 768px) {
     .form-container {
         right: 0.5rem;
-        left: 0.5rem;
-        width: auto;
+        left: 50%;
+        transform: translate( -50%);
+        width: 80vw;
         height: auto;
         bottom: 7rem;
-        padding: 2rem;
+        padding: 1rem;
         position: fixed;
     }
     

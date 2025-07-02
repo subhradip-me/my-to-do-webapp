@@ -8,10 +8,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
 </head>
 <body>
-  
-  <div class="header">
-    <h1>Modern To-Do List</h1>
-    <p>Organize your tasks efficiently</p>
+
+  <div class="todo-header-card">
+    <div class="todo-header-app">
+      <span class="todo-app-icon"><i class="fas fa-list-check"></i></span>
+      <span class="todo-app-name">Modern To-Do List</span>
+    </div>
+    <div class="todo-header-date">
+      <span class="todo-date-label"><i class="fas fa-calendar-alt"></i> Today</span>
+      <span class="todo-date-value" id="current-date"></span>
+    </div>
   </div>
 
   <div class="container">
@@ -44,6 +50,7 @@
     <div class="task-grid">
     <!-- Tasks will be dynamically added here -->
 
+    </div>
   </div>
 
   <button class="task-add-btn" onclick="toggleAddTaskForm()">+</button>

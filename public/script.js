@@ -7,6 +7,19 @@ const taskGrid = document.querySelector(".task-grid");
 const addTaskBtn = document.querySelector(".task-add-btn");
 const addTaskForm = document.querySelector(".form-container");
 
+
+// Modern calendar date in header
+function setCurrentDate() {
+  const dateElem = document.getElementById('current-date');
+  if (!dateElem) return;
+  const today = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  dateElem.textContent = today.toLocaleDateString(undefined, options);
+}
+setCurrentDate();
+
+
+
 let isFormVisible = false;
  // default form state
 
@@ -58,9 +71,9 @@ function createTaskCard(title, desc, date, priority, saveToStorage = true, compl
   prioritySpan.style.backgroundColor = priorityBackgroundColor[priorityKey] || "#fff";
 
   card.style.backgroundColor =
-    priority === "high" ? "#FFD4DB" :
-    priority === "medium" ? "#BBE7FE" :
-    priority === "low" ? "#FFF4BD" : "";
+    priority === "high" ? "#FFF" :
+    priority === "medium" ? "#FFF" :
+    priority === "low" ? "#FFF" : "";
 
   card.querySelector(".del").addEventListener("click", () => {
     if (confirm("Are you sure you want to delete this task?")) {
@@ -103,6 +116,11 @@ function toggleAddTaskForm(show = null) {
 
   addTaskForm.style.display = isFormVisible ? "block" : "none";
   addTaskBtn.textContent = isFormVisible ? "x" : "+";
+  // Update header toggle icon if present
+  const toggleIcon = document.getElementById("toggle-icon");
+  if (toggleIcon) {
+    toggleIcon.textContent = isFormVisible ? "×" : "+";
+  }
 }
 
 
