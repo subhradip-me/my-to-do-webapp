@@ -48,7 +48,8 @@ To_Do_List_app/
 
 ## Screenshots
 
-![Modern To-Do List Screenshot](screenshot.png) <!-- Add your screenshot here if available -->
+<!-- Add your screenshot here if available -->
+![Modern To-Do List Screenshot](https://i.pinimg.com/736x/ac/db/e1/acdbe1cbb93907235c2a467d78ca5133.jpg)
 
 ## License
 
