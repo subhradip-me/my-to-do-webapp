@@ -1,4 +1,4 @@
-# Modern To-Do List App
+# To-Do List webApp
 
 A clean, modern, and responsive To-Do List web application built with HTML, CSS, and JavaScript.  
 Easily add, edit, complete, and delete your daily tasks. Tasks are saved in your browser’s local storage.
